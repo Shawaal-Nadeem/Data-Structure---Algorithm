@@ -3,10 +3,10 @@
 #include <iostream>
 using namespace std;
 
-template<typename Type>
+template<class Type>
 class List
 {
-
+protected:
 	Type* arr;
 	int maxSize;
 	int currentSize;
