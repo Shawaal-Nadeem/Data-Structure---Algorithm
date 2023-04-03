@@ -37,6 +37,24 @@ char myList::firstRepeatingElement()
 
 	return alph;
 }
+char myList::firstNonRepeatingElement()
+{
+	char alpha;
+
+	for (int i = 0; i < maxSize; i++)
+	{
+		for (int j = 0; j < maxSize; j++)
+		{
+				if (arr[i] != arr[j])
+				{
+					alpha = arr[i];
+					break;
+				}
+		}
+	}
+
+	return alpha;
+}
 void myList::display()
 {
 	for (int i = 0; i<maxSize; i++)

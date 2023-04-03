@@ -9,6 +9,7 @@ public:
 	~myList();
 	 char removeElementFromSpecificPositionList(int pos);
 	 char firstRepeatingElement();
+	 char firstNonRepeatingElement();
 	 void display();
 };
 

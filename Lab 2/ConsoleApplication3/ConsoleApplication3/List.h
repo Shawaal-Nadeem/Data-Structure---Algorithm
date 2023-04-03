@@ -15,6 +15,7 @@ public:
 	~List();
 	virtual char removeElementFromSpecificPositionList(int pos) = 0;
 	virtual char firstRepeatingElement() = 0;
+	virtual char firstNonRepeatingElement() = 0;
 	char*deepCopy(char*p);
 	virtual void display() = 0;
 };
