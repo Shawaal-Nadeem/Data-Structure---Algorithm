@@ -29,6 +29,7 @@ public:
 			arr = nullptr;
 		}*/
 	}
-
+	 virtual void display() = 0;
+	 virtual Type removeElementFromSpecificPositionList(Type arr, int pos) = 0;
 };
 
