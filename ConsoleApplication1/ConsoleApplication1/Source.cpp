@@ -31,7 +31,7 @@ int main()
 		}
 	}
 
-	stack_obj.display();
+
 	cout << post_arr << endl;
 
 	return 0;
