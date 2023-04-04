@@ -1,21 +1,35 @@
 #include "List.h"
 
-int top;
+
+char*List::deepCopy(char*p)
+{
+	int length = strlen(p);
+	char*temp = new char[length + 1];
+	for (int i = 0; i < length; i++)
+	{
+		temp[i] = p[i];
+	}
+	temp[length] = '\0';
+	return temp;
+}
 List::List()
 {
 	arr = nullptr;
 	size = 0;
 	top = -1;
 }
-List::List(int*arrP, int s)
+List::List(char*arrP, int s)
 {
-	arr = arrP;
+	arr = deepCopy(arrP);
 	size = s;
 	top = -1;
 }
 List::~List(){}
-
-void List::push(int data)
+List::List(const List&obj)
+{
+	this->arr = deepCopy(obj.arr);
+}
+void List::push(char data)
 {
 	if (isFull() == true)
 	{
@@ -33,7 +47,7 @@ void List::display()
 	}
 }
 
-int List::pop()
+char List::pop()
 {
 	if (isEmpty() == true)
 	{

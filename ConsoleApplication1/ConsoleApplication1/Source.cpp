@@ -2,20 +2,37 @@
 
 int main()
 {
-	int arr[5];
-	List obj(arr, 5);
-	obj.push(12);
-	obj.push(90);
-	obj.push(78);
-	obj.push(43);
-	obj.push(30);
+	char stack_arr[10];
+	char post_arr[18];
+	List stack_obj(stack_arr, 10);
 
-	obj.pop();
-	obj.pop();
-
-	cout << "Number of Elemets in stack are : " << obj.num_Of_Elemets() << endl;
+	
+	char inf_arr[18] = { '(', '2', '-', '(', '9', '/', '3', ')', '*', '2', '+', '5', ')', '*', '9', '%', '5' };
+	cout << "Enter Infix Expression : " << inf_arr << endl;
 	cout << endl;
-	obj.display();
+	int count = 0;
+	for (int i = 0; i < 18; i++)
+	{
+		if (inf_arr[i] == '(')
+		{
+			stack_obj.push(inf_arr[i]);
+		}
+		else if (inf_arr[i] == ')')
+		{
+			for (int j = stack_obj.top; stack_arr[j] == '('; j--)
+			{
+				stack_obj.pop();
+			}
+		}
+		else
+		{
+			post_arr[count] = inf_arr[i];
+			count++;
+		}
+	}
+
+	stack_obj.display();
+	cout << post_arr << endl;
 
 	return 0;
 }
