@@ -2,12 +2,12 @@
 
 
 myList::myList() :List(){}
-myList::myList(char*arrP, int ms, int cs) : List(arrP, ms, cs){}
+myList::myList(int*arrP, int ms, int cs) : List(arrP, ms, cs){}
 myList::myList(const myList&obj) : List(obj){}
 myList::~myList(){}
-char myList::removeElementFromSpecificPositionList(int pos)
+int myList::removeElementFromSpecificPositionList(int pos)
 {
-	char element = arr[pos];
+	int element = arr[pos];
 	for (int i = pos; i<maxSize; i++)
 	{
 		arr[i] = arr[i + 1];
@@ -16,9 +16,9 @@ char myList::removeElementFromSpecificPositionList(int pos)
 	return element;
 }
 
-char myList::firstRepeatingElement()
+int myList::firstRepeatingElement()
 {
-	char alph;
+	int alph;
 
 	for (int i = 0; i < maxSize; i++)
 	{
@@ -37,20 +37,15 @@ char myList::firstRepeatingElement()
 
 	return alph;
 }
-char myList::firstNonRepeatingElement()
+int myList::firstNonRepeatingElement()
 {
-	char alpha;
-
-	for (int i = 0; i < maxSize; i++)
+	int alpha;
+	int j = 0;
+	for (int i = 0; arr[i]!=arr[j]; i++)
 	{
-		for (int j = 0; j < maxSize; j++)
-		{
-				if (arr[i] != arr[j])
-				{
 					alpha = arr[i];
+					j++;
 					break;
-				}
-		}
 	}
 
 	return alpha;

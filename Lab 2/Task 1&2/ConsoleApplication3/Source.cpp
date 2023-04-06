@@ -2,11 +2,11 @@
 
 int main()
 {
-	char ar[5] = { 'A', 'B', 'C', 'B', 'B' };
+	int ar[5] = { 1, 2, 3, 2, 2 };
 	myList obj(ar, 5, 0);
 	//obj.removeElementFromSpecificPositionList(2);
-	//obj.firstRepeatingElement();
-	cout << obj.firstNonRepeatingElement();
+	//cout << obj.firstRepeatingElement() << endl;;
+	cout << obj.firstNonRepeatingElement() << endl;
 	obj.display();
 	return 0;
 }
