@@ -2,22 +2,22 @@
 
 int main()
 {
-	char stack_arr[10];
-	char post_arr[18];
-	List stack_obj(stack_arr, 10);
+	char stack_arr[4];
+	char post_arr[8];
+	List stack_obj(stack_arr,4);
 
 	
-	char inf_arr[18] = { '(', '2', '-', '(', '9', '/', '3', ')', '*', '2', '+', '5', ')', '*', '9', '%', '5' };
+	char inf_arr[8] = { '5', '+', '(', '4', '*', '3', ')'};
 	cout << "Enter Infix Expression : " << inf_arr << endl;
 	cout << endl;
 	int count = 0;
-	for (int i = 0; i < 18; i++)
+	for (int i = 0; i < 8; i++)
 	{
 		if (inf_arr[i] == '(')
 		{
 			stack_obj.push(inf_arr[i]);
 		}
-		else if (inf_arr[i] == ')')
+		 if (inf_arr[i] == ')')
 		{
 			for (int j = stack_obj.top; stack_arr[j] == '('; j--)
 			{
