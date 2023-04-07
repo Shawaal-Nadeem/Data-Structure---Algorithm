@@ -18,7 +18,7 @@ int myList::removeElementFromSpecificPositionList(int pos)
 
 int myList::firstRepeatingElement()
 {
-	int alph;
+	int alph=0;
 
 	for (int i = 0; i < maxSize; i++)
 	{
@@ -39,21 +39,44 @@ int myList::firstRepeatingElement()
 }
 int myList::firstNonRepeatingElement()
 {
-	int alpha;
-	int j = 0;
+	int alpha=0;
+	/*int j = 0;
 	for (int i = 0; arr[i]!=arr[j]; i++)
 	{
 					alpha = arr[i];
 					j++;
 					break;
-	}
+	}*/
 
 	return alpha;
 }
+
+
 void myList::display()
 {
 	for (int i = 0; i<maxSize; i++)
 	{
 		cout << arr[i] << " ";
 	}
+}
+
+
+void myList::countFrequencyOfEachElement()
+{
+	int count[5] = { 0 };
+	for (int i = 0; i < maxSize; i++)
+	{
+		for (int j = 0; j < maxSize; j++)
+		{
+			if (i != j)
+			{
+				if (arr[0] == arr[j])
+				{
+					count[0]++;
+				}
+			}
+		}
+	}
+
+	cout << count[0] << endl;
 }

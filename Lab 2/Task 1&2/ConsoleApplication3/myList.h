@@ -11,5 +11,6 @@ public:
 	 int firstRepeatingElement();
 	 int firstNonRepeatingElement();
 	 void display();
+	 void countFrequencyOfEachElement();
 };
 
