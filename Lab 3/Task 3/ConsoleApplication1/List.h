@@ -18,6 +18,7 @@ public:
 	bool isEmpty();
 	int num_Of_Elemets();
 	void display();
+	void infix_to_postfix(char*inf_arr);
 	char*deepCopy(char*p);
 
 };
