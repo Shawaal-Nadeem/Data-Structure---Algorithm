@@ -6,10 +6,8 @@ int main()
 	obj.insertAtStart(2);
 	obj.insertAtLast(6);
 	obj.insertAtLast(5);
-	obj.deleteFromEnd();
-	obj.deleteFromEnd();
-	obj.deleteFromEnd();
-
+	obj.insertAtStart(3);
+    obj.size();
 	obj.display();
 	return 0;
 }

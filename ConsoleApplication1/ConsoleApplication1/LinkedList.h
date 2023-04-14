@@ -17,5 +17,6 @@ public:
 	virtual int deleteFromStart() = 0;
 	virtual int deleteFromEnd() = 0;
 	virtual void display() = 0;
+	virtual void size() = 0;
 };
 

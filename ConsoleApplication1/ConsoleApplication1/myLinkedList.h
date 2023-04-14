@@ -69,7 +69,15 @@ public:
 			return data;
 		}
 	}
-
+	void LinkedList::size() {
+		int count = 0;
+		Node* temp = head;
+		while (temp != nullptr) {
+			temp = temp->next;
+			count++;
+		}
+		cout<<"Size :"<< count<<endl;
+	}
 	void LinkedList::display() {
 		Node* temp = head;
 		while (temp != nullptr) {
