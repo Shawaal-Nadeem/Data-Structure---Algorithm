@@ -16,6 +16,8 @@ public:
 	}
 	virtual void insertAtFront(int value) = 0;
 	virtual void insertAtEnd(int value) = 0;
+	virtual int removeFromFront() = 0;
+	virtual int removeFromEnd() = 0;
 	virtual void display() = 0;
 };
 

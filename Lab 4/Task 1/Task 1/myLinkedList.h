@@ -24,6 +24,61 @@ public:
 		tail = temp;
 	}
 
+	int LinkedList::removeFromFront()
+	{
+		if (head == nullptr && tail == nullptr)
+		{
+			cout << "List is Empty." << endl;
+			return NULL;
+		}
+		else if (head == tail)
+		{
+			Node*temp = head;
+			int data = temp->data;
+			delete head;
+			head = nullptr;
+			return data;
+		}
+		else
+		{
+			Node*temp = head;
+			int data = temp->data;
+			head = temp->next;
+			return data;
+		}
+	}
+
+	int LinkedList::removeFromEnd()
+	{
+		if (head == nullptr && tail == nullptr)
+		{
+			cout << "List is Empty." << endl;
+			return NULL;
+		}
+		else if (head == tail)
+		{
+			Node*temp = head;
+			int data = temp->data;
+			delete head;
+			head = nullptr;
+			return data;
+
+		}
+		else
+		{
+			Node*temp = head;
+			int data = tail->data;
+			while (temp->next != tail)
+			{
+				temp = temp->next;
+			}
+			
+			tail = temp;
+			tail->next = nullptr;
+			return data;
+		}
+	}
+
 	void LinkedList::display()
 	{
 		Node*temp = head;
