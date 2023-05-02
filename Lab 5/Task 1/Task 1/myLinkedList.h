@@ -9,36 +9,108 @@ public:
 	{
 		Node*temp = new Node;
 		temp->data = val;
-		temp->next = head;
-		head = temp;
-		tail = temp;
+		if (head == nullptr && tail==nullptr)
+		{
+			temp->next = nullptr;
+			head = temp;
+			tail = temp;
+		}
+		else
+		{
+			temp->next = head;
+			head = temp;
+		}
+		
 	}
 	void LinkedList::insertAtLast(int val)
 	{
 		Node*temp = new Node;
 		temp->data = val;
 		temp->next = nullptr;
-		tail->next = temp;
-		tail = temp;
+		if (head ==nullptr &&  tail==nullptr)
+		{
+			head = temp;
+			tail = temp;
+		}
+			
+			tail->next = temp;
+			tail = temp;
+		
 	}
 	int LinkedList::removeAtFront()
 	{
-		Node*temp = head;
-		int val = temp->data;
-		head = temp->next;
-		return val;
+		if (head == nullptr && tail==nullptr)
+		{
+			cout << "Link List already Empty" << endl;
+		}
+		else if (head == tail)
+		{
+			int data = head->data;
+			delete head;
+			head = nullptr;
+			tail = nullptr;
+			return data;
+		}
+		else
+		{
+			Node*temp = head;
+			int val = temp->data;
+			head = temp->next;
+			delete temp;
+			temp = nullptr;
+			return val;
+		}
+
 	}
 	int LinkedList::removeAtLast()
 	{
-		Node*temp = head;
-		while (temp->next != nullptr)
+		if (head == nullptr && tail == nullptr)
 		{
-			temp = temp->next;
+			cout << "Link List already Empty" << endl;
 		}
-		int val = temp->data;
-		tail = temp;
-		return val;
+		else if (head == tail)
+		{
+			int data = head->data;
+			delete head;
+			head = nullptr;
+			tail = nullptr;
+			return data;
+		}
+		else
+		{
+			Node*temp = head;
+			int data = tail->data;
+			while (temp->next != tail)
+			{
+				temp = temp->next;
+			}
+			tail = temp;
+			tail->next = nullptr;
+			
+			return data;
+		}
 	}
+
+	void LinkedList::insertatspecificposition(int pos,int val)
+	{
+		Node*temp = head;
+		Node*p=new Node;
+		Node*newNode = new Node;
+		int count = 2;
+		while (temp != nullptr)
+		{
+			count++;
+			temp = temp->next;
+			if (count == pos)
+			{
+				newNode->next=temp->next;
+				temp->next = newNode;
+			}
+		}
+		newNode->data = val;
+		
+	}
+
 	void LinkedList::display()
 	{
 		Node*temp = head;
