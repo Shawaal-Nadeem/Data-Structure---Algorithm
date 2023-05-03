@@ -91,6 +91,18 @@ public:
 		}
 	}
 
+	int LinkedList::size()
+	{
+		int s = 0;
+		Node*temp = head;
+		while (temp != nullptr)
+		{
+			temp = temp->next;
+			s++;
+		}
+		return s;
+	}
+
 	void LinkedList::insertatspecificposition(int pos,int val)
 	{
 		Node*temp = head;

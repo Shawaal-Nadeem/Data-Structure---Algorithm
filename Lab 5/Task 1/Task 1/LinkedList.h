@@ -17,6 +17,7 @@ public:
 	virtual int removeAtFront() = 0;
 	virtual int removeAtLast() = 0;
 	virtual void display() = 0;
+	virtual int size() = 0;
 	virtual void insertatspecificposition(int pos, int val) = 0;
 };
 

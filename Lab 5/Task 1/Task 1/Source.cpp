@@ -9,6 +9,7 @@ int main()
 	obj.insertAtLast(4);
 	obj.insertAtLast(5);
 	obj.insertatspecificposition(1,20);
+	cout << obj.size() << endl;
 	obj.display();
 
 	return 0;
