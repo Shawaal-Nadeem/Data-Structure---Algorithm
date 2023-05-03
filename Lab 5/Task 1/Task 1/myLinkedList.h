@@ -137,6 +137,42 @@ public:
 		}
 	}
 
+	int LinkedList::removeatspecificposition(int pos)
+	{
+		Node*temp = head;
+		Node*p;
+		int val;
+		if (pos != 1 && pos != 2)
+		{
+			int count = 2;
+			while (temp != nullptr)
+			{
+				count++;
+				temp = temp->next;
+				if (count == pos)
+				{
+					
+					p = temp->next;
+					val = p->data;
+					temp->next = p->next;
+					/*delete p;
+					p = nullptr;*/
+				}
+			}
+			return val;
+		}
+
+		else if (pos == 2)
+		{
+			p = head->next;
+			val = p->data;
+			head->next = p->next;
+		}
+		else if (pos == 1)
+		{
+			head = head->next;
+		}
+	}
 	void LinkedList::display()
 	{
 		Node*temp = head;
