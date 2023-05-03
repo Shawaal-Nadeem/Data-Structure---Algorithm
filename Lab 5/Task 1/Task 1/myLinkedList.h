@@ -167,10 +167,13 @@ public:
 			p = head->next;
 			val = p->data;
 			head->next = p->next;
+			return val;
 		}
 		else if (pos == 1)
 		{
+			val = head->data;
 			head = head->next;
+			return val;
 		}
 	}
 	void LinkedList::display()
