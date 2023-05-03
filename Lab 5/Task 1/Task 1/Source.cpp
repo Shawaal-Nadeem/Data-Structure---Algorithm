@@ -8,7 +8,7 @@ int main()
 	obj.insertAtLast(3);
 	obj.insertAtLast(4);
 	obj.insertAtLast(5);
-	obj.insertatspecificposition(3,20);
+	obj.insertatspecificposition(1,20);
 	obj.display();
 
 	return 0;

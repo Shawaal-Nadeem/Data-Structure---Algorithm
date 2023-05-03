@@ -94,21 +94,35 @@ public:
 	void LinkedList::insertatspecificposition(int pos,int val)
 	{
 		Node*temp = head;
-		Node*p=new Node;
 		Node*newNode = new Node;
-		int count = 2;
-		while (temp != nullptr)
+		if (pos != 1 && pos != 2)
 		{
-			count++;
-			temp = temp->next;
-			if (count == pos)
+			int count = 2;
+			while (temp != nullptr)
 			{
-				newNode->next=temp->next;
-				temp->next = newNode;
+				count++;
+				temp = temp->next;
+				if (count == pos)
+				{
+					newNode->next = temp->next;
+					temp->next = newNode;
+				}
 			}
+			newNode->data = val;
 		}
-		newNode->data = val;
 		
+		else if (pos == 2)
+		{
+			newNode->next = head->next;
+			head->next = newNode;
+			newNode->data = val;
+		}
+		else if (pos==1)
+		{
+			newNode->next = head;
+			head = newNode;
+			newNode->data = val;
+		}
 	}
 
 	void LinkedList::display()
