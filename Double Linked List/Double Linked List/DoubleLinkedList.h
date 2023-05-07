@@ -10,6 +10,27 @@ public:
 		head = nullptr;
 		tail = nullptr;
 	}
+
+	void insertatFirst(int val)
+	{
+		Node*temp = new Node;
+		temp->data = val;
+		if (head == nullptr && tail == nullptr)
+		{
+			temp->prev = nullptr;
+			temp->next = nullptr;
+			head = temp;
+			tail = temp;
+		}
+		else
+		{
+			tail->prev = temp;
+			temp->next = tail;
+			temp->prev = nullptr;
+			tail = temp;
+			
+		}
+	}
 	
 	void insertatLast(int val)
 	{

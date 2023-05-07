@@ -3,11 +3,11 @@
 int main()
 {
 	DoubleLinkedList obj;
-	obj.insertatLast(10);
-	obj.insertatLast(20);
-	obj.insertatLast(30);
-	obj.insertatLast(40);
-	obj.insertatLast(50);
+	obj.insertatFirst(10);
+	obj.insertatFirst(20);
+	obj.insertatFirst(30);
+	obj.insertatFirst(40);
+	obj.insertatFirst(50);
 	obj.display();
 	return 0;
 }
