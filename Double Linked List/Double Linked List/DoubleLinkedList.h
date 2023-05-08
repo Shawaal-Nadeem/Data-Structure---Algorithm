@@ -24,10 +24,10 @@ public:
 		}
 		else
 		{
-			tail->prev = temp;
-			temp->next = tail;
+			head->prev = temp;
+			temp->next = head;
 			temp->prev = nullptr;
-			tail = temp;
+			head = temp;
 			
 		}
 	}
@@ -50,6 +50,28 @@ public:
 			temp->next = nullptr;
 			tail = temp;
 		}
+	}
+
+	int deleteatLast()
+	{
+		Node*temp = head;
+		while (temp->next != tail)
+		{
+			temp = temp->next;
+		}
+		temp->next = nullptr;
+		int val = tail->data;
+		tail = temp;
+		return val;
+	}
+
+	int deleteatFirst()
+	{
+		Node*temp = head;
+		int val = temp->data;
+		head = temp->next;
+		head->prev = nullptr;
+		return val;
 	}
 
 	void display()
