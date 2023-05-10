@@ -20,5 +20,6 @@ public:
 	virtual int size() = 0;
 	virtual void insertatspecificposition(int pos, int val) = 0;
 	virtual int removeatspecificposition(int pos) = 0;
+	virtual void rotate_at_Nth_Position(int n)=0;
 };
 

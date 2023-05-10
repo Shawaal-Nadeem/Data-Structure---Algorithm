@@ -176,14 +176,45 @@ public:
 			return val;
 		}
 	}
+
+	void LinkedList::rotate_at_Nth_Position(int n)
+	{
+		Node*temp = head;
+		Node*newNode = new Node;
+		int count = 1;
+		if (n == 1)
+		{
+			tail->next = head;
+			head = temp->next;
+		}
+		else
+		{
+			while (temp != nullptr)
+			{
+				count++;
+				temp = temp->next;
+				if (count == n)
+				{
+					break;
+				}
+			}
+			tail->next = head;
+			head = temp->next;
+
+		}
+
+	}
+
 	void LinkedList::display()
 	{
 		Node*temp = head;
-		while (temp!= nullptr)
+		while (temp->next != head)
 		{
 			cout << temp->data<<"->";
 			temp = temp->next;
 		}
+		Node*p = temp;
+		cout << p->data;
 		cout << endl;
 	}
 };
