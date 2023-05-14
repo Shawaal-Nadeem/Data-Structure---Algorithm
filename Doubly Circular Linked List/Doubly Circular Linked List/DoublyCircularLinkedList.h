@@ -44,11 +44,23 @@ public:
 	}
 	int DoubleLinkedList::deleteatFirst()
 	{
-		return 0;
+		Node*temp = head->next;
+		temp->prev = nullptr;
+		int val = head->data;
+		head = temp;
+		return val;
 	}
 	int DoubleLinkedList::deleteatLast()
 	{
-		return 0;
+		Node*temp = head;
+		while (temp->next != tail)
+		{
+			temp = temp->next;
+		}
+		int val = tail->data;
+		temp->next = nullptr;
+		tail = temp;
+		return val;
 	}
 	void DoubleLinkedList::display()
 	{

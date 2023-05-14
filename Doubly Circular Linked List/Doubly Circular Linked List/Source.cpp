@@ -3,11 +3,16 @@
 int main()
 {
 	DoublyCircularLinkedList obj;
-	obj.insertatFirst(1);
-	obj.insertatFirst(2);
-	obj.insertatFirst(3);
-	obj.insertatFirst(4);
-	obj.insertatFirst(5);
+	obj.insertatLast(1);
+	obj.insertatLast(2);
+	obj.insertatLast(3);
+	obj.insertatLast(4);
+	obj.insertatLast(5);
+	obj.deleteatFirst();
+	obj.deleteatFirst();
+	obj.deleteatFirst();
+	obj.deleteatFirst();
+	obj.deleteatFirst();
 
 	obj.display();
 	return 0;
