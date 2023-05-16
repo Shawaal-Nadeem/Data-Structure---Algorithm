@@ -27,6 +27,15 @@ public:
 		::count++;
 	}
 
+	int LinkedList::deleteatFirst()
+	{
+		Node*temp = header->next;
+		int val = temp->data;
+		header->next = temp->next;
+		::count--;
+		return val;
+	}
+
 	void LinkedList::display()
 	{
 		Node*temp = header->next;
