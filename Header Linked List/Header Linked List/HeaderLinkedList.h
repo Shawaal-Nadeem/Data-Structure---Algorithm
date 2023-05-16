@@ -36,6 +36,22 @@ public:
 		return val;
 	}
 
+	int LinkedList::deleteatLast()
+	{
+		Node*temp = header->next;
+		while (temp->next != nullptr)
+		{
+			temp = temp->next;
+		}
+		cout << temp->data << endl;
+		/*Node*p = temp->next;
+		int val = p->data;
+		temp->next = nullptr;
+		::count--;*/
+		return 0;
+
+	}
+
 	void LinkedList::display()
 	{
 		Node*temp = header->next;
