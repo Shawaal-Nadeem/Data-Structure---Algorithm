@@ -16,6 +16,5 @@ public:
 	virtual void insertatFirst(int val)=0;
 	virtual void insertatLast(int val)=0;
 	virtual int deleteatFirst()=0;
-	virtual int deleteatLast()=0;
 	virtual void display()=0;
 };

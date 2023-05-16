@@ -8,7 +8,8 @@ int main()
 	obj.insertatLast(3);
 	obj.insertatLast(4);
 	obj.insertatLast(5);
-	obj.deleteatLast();
+	obj.deleteatFirst();
+	obj.deleteatFirst();
 	obj.display();
 
 	return 0;
