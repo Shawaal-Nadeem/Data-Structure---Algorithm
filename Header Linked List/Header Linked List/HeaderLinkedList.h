@@ -13,6 +13,20 @@ public:
 		::count++;
 	}
 
+	void insertatLast(int val)
+	{
+		Node*temp = new Node;
+		temp->data = val;
+		temp->next = nullptr;
+		Node*trav = header;
+		while (trav->next != nullptr)
+		{
+			trav = trav->next;
+		}
+		trav->next = temp;
+		::count++;
+	}
+
 	void LinkedList::display()
 	{
 		Node*temp = header->next;
