@@ -115,7 +115,27 @@ public:
 		}
 	}
 
-
+	// Task 3
+	void display_Even_numbers(Node*temp)
+	{
+		if (temp->data % 2 == 0)
+		{
+			cout << temp->data<<" ";
+			temp = temp->next;
+			if (temp != tail)
+			{
+				display_Even_numbers(temp);
+			}
+		}
+		else
+		{
+			temp = temp->next;
+			if (temp != tail)
+			{
+				display_Even_numbers(temp);
+			}
+		}
+	}
 
 	void display()
 	{
@@ -128,5 +148,8 @@ public:
 		cout << endl;
 		cout << "Sum of List are : " << sum_of_list(head) << endl;
 		cout << "Product of List are : " << product_of_prime(head) << endl;
+		cout << "Even Numbers in List are : "; 
+		display_Even_numbers(head);
+		cout << endl;
 	}
 };
