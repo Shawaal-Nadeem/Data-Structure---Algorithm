@@ -29,7 +29,7 @@ public:
 			tail = temp;
 		}
 	}
-	int sum(Node*temp)
+	int sum_of_list(Node*temp)
 	{
 		if (head->next == nullptr && tail->next == nullptr)
 		{
@@ -45,7 +45,7 @@ public:
 			}
 		    x = temp->data;
 			 temp = temp->next;
-			x = x + sum(temp);
+			x = x + sum_of_list(temp);
 			return x;
 		}
 	}
@@ -58,6 +58,6 @@ public:
 			temp = temp->next;
 		}
 		cout << endl;
-		cout << "Sum of List are : " << sum(head) << endl;
+		cout << "Sum of List are : " << sum_of_list(head) << endl;
 	}
 };
