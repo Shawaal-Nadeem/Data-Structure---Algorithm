@@ -137,6 +137,23 @@ public:
 		}
 	}
 
+	void occurance_of_key(Node*temp,int key)
+	{
+		if (temp->data == key)
+		{
+			cout << key << " exist in Linked List. " << endl;
+		}
+		else
+		{
+			if (temp != tail)
+			{
+				temp = temp->next;
+				occurance_of_key(temp, key);
+			}
+		}
+
+	}
+
 	void display()
 	{
 		Node*temp = head;
@@ -151,5 +168,10 @@ public:
 		cout << "Even Numbers in List are : "; 
 		display_Even_numbers(head);
 		cout << endl;
+		int key;
+		cout << "Enter Key : ";
+		cin >> key;
+		cout << endl;
+		occurance_of_key(head, key);
 	}
 };
