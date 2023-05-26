@@ -29,6 +29,7 @@ public:
 			tail = temp;
 		}
 	}
+	// Task 1
 	int sum_of_list(Node*temp)
 	{
 		if (head->next == nullptr && tail->next == nullptr)
@@ -50,6 +51,7 @@ public:
 		}
 	}
 
+	// Task 2
 	bool checkPrime(int x)
 	{
 		if (x <= 1)
@@ -99,8 +101,6 @@ public:
 				if (temp == tail)
 				{
 					x = 1;
-					cout << "x = " << x << endl;
-					cout << "temp->data = " << temp->data << endl;
 					return x = x * temp->data;
 				}
 				else
@@ -114,6 +114,8 @@ public:
 			}
 		}
 	}
+
+
 
 	void display()
 	{
