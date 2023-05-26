@@ -49,6 +49,72 @@ public:
 			return x;
 		}
 	}
+
+	bool checkPrime(int x)
+	{
+		if (x <= 1)
+		{
+			return false;
+		}
+		else if (x >= 2)
+		{
+			if (x == 2)
+			{
+				return true;
+			}
+			else 
+			{
+				for (int i = 2; i < x; i++) 
+				{
+					if (x % i == 0) 
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+			
+		}
+	}
+
+	int product_of_prime(Node*temp)
+	{
+		if (head->next == nullptr && tail->next == nullptr)
+		{
+			if (checkPrime(head->data) == true)
+			{
+				return head->data;
+			}
+		}
+		else
+		{
+			int x = 0;
+			x = temp->data;
+			if (temp != tail)
+			{
+				temp = temp->next;
+			}
+			if (checkPrime(x) == true)
+			{
+				if (temp == tail)
+				{
+					x = 1;
+					cout << "x = " << x << endl;
+					cout << "temp->data = " << temp->data << endl;
+					return x = x * temp->data;
+				}
+				else
+				{
+					return x * product_of_prime(temp);
+				}
+			}
+			else
+			{
+				product_of_prime(temp);
+			}
+		}
+	}
+
 	void display()
 	{
 		Node*temp = head;
@@ -59,5 +125,6 @@ public:
 		}
 		cout << endl;
 		cout << "Sum of List are : " << sum_of_list(head) << endl;
+		cout << "Product of List are : " << product_of_prime(head) << endl;
 	}
 };
