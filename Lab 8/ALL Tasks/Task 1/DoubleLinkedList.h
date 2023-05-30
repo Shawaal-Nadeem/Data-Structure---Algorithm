@@ -137,6 +137,7 @@ public:
 		}
 	}
 
+	// Task 4
 	void occurance_of_key(Node*temp,int key)
 	{
 		if (temp->data == key)
@@ -154,6 +155,20 @@ public:
 
 	}
 
+	void reverse_of_List()
+	{
+		Node*temp = head;
+		while (temp != nullptr)
+		{
+			Node* nextNode = temp->next;
+			temp->next = temp->prev;
+			temp->prev = nextNode;
+			temp = nextNode;
+		}
+		Node*tempPointer = head;
+		head = tail;
+		tail = tempPointer;
+	}
 	void display()
 	{
 		Node*temp = head;
