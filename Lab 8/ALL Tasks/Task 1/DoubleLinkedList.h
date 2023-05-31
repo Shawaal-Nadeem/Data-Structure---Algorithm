@@ -188,6 +188,25 @@ public:
 		}
 	}
 
+	// Task 6
+	bool checkPalindrome(Node*temp)
+	{
+		while (temp != nullptr)
+		{
+			Node*newNode = new Node;
+			newNode->prev = temp->prev;
+			newNode->data = temp->data;
+			newNode->next = temp->next;
+			temp = temp->next;
+		}
+		Node*newNode = head;
+		while (newNode != nullptr)
+		{
+			
+		}
+		return true;
+	}
+
 	void display()
 	{
 		cout << "Reverse of List are : " << endl;
@@ -210,5 +229,6 @@ public:
 		cout << endl;
 		occurance_of_key(head, key);
 		cout << endl;
+		cout << checkPalindrome(head);
 	}
 };
