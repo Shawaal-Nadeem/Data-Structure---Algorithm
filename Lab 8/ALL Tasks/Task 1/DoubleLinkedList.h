@@ -154,7 +154,7 @@ public:
 		}
 
 	}
-
+	// Task 5   without recursion
 	void reverse_of_List()
 	{
 		Node*temp = head;
@@ -169,8 +169,29 @@ public:
 		head = tail;
 		tail = tempPointer;
 	}
+
+	void reverse_of_List(Node*temp)
+	{
+		Node*newNode = temp->next;
+		temp->next = temp->prev;
+		temp->prev = newNode;
+		temp = newNode;
+		if (temp != nullptr)
+		{
+			reverse_of_List(temp);
+		}
+		if (temp == nullptr)
+		{
+			Node*tempHead = head;
+			head = tail;
+			tail = tempHead;
+		}
+	}
+
 	void display()
 	{
+		cout << "Reverse of List are : " << endl;
+		reverse_of_List(head);
 		Node*temp = head;
 		while (temp != nullptr)
 		{
@@ -188,5 +209,6 @@ public:
 		cin >> key;
 		cout << endl;
 		occurance_of_key(head, key);
+		cout << endl;
 	}
 };

@@ -8,7 +8,7 @@ int main()
 	obj.insert(3);
 	obj.insert(4);
 	obj.insert(5);
-	obj.reverse_of_List();
+	/*obj.reverse_of_List();*/
 	obj.display();
 	return 0;
 }
