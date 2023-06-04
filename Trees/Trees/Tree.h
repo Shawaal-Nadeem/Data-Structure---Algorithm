@@ -21,13 +21,16 @@ public:
 		else
 		{
 			Node*trav = root;
-			if (temp->data < trav->data)
-			{
-				trav->right = temp;
-				temp->right = nullptr;
-				temp->left = nullptr;
-				trav = temp;
-			}
+				while (trav != nullptr)
+				{
+					if (temp->data < trav->data)
+					{
+						trav->left = temp;
+						temp->right = nullptr;
+						temp->left = nullptr;
+					}
+					trav = trav->left;
+				}
 		}
 	}
 };
