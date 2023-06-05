@@ -45,4 +45,19 @@ public:
 				}
 		}
 	}
+	void Inorder(Node*temp)
+	{
+		if (temp != nullptr)
+		{
+			Inorder(temp->left);
+			cout << temp->data<<" ";
+			Inorder(temp->right);
+		}
+	}
+	void display()
+	{
+		cout << "Inorder : ";
+		Inorder(root);
+		cout << endl;
+	}
 };
