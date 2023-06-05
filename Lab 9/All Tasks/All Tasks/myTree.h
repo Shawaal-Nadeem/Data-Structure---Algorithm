@@ -72,6 +72,18 @@ public:
 		}
 	}
 
+	bool Tree::is_Bst_Empty()
+	{
+		if (root == nullptr)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	void Tree::display()
 	{
 		cout << "Inorder : ";
@@ -82,6 +94,16 @@ public:
 		cout << endl;
 		cout << "Postorder : ";
 		PostOrder(root);
+		cout << endl;
+		if (is_Bst_Empty() == true)
+		{
+			cout << "Tree is Empty" << endl;
+		}
+		else
+		{
+			cout << "Tree is not Empty" << endl;
+		}
+		cout << endl;
 		cout << endl;
 	}
 };
