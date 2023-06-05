@@ -25,11 +25,11 @@ public:
 				{
 					if (temp->data < trav->data)
 					{
+						trav = trav->left;
 						trav->left = temp;
 						temp->right = nullptr;
 						temp->left = nullptr;
 					}
-					trav = trav->left;
 				}
 		}
 	}
