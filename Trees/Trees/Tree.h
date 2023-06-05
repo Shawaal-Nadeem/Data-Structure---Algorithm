@@ -45,7 +45,8 @@ public:
 				}
 		}
 	}
-	void Inorder(Node*temp)
+
+	void Inorder(Node*temp)                           // L,N,R
 	{
 		if (temp != nullptr)
 		{
@@ -54,10 +55,37 @@ public:
 			Inorder(temp->right);
 		}
 	}
+	void Preorder(Node*temp)                         // N,L,R
+	{
+		if (temp != nullptr)
+		{
+			cout << temp->data << " ";
+			Preorder(temp->left);
+			Preorder(temp->right);
+		}
+	}
+
+	void Postorder(Node*temp)                         // L,R,N
+	{
+		if (temp != nullptr)
+		{
+			Postorder(temp->left);
+			Postorder(temp->right);
+			cout << temp->data << " ";
+		}
+	}
+
 	void display()
 	{
 		cout << "Inorder : ";
 		Inorder(root);
 		cout << endl;
+		cout << "Preorder : ";
+		Preorder(root);
+		cout << endl;
+		cout << "Postorder : ";
+		Postorder(root);
+		cout << endl;
+		
 	}
 };
