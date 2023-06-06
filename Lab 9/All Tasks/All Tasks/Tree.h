@@ -14,5 +14,6 @@ public:
 	virtual void PreOrder(Node*temp) = 0;
 	virtual void PostOrder(Node*temp) = 0;
 	virtual bool is_Bst_Empty() = 0;
+	virtual Node* delete_Leaf_Node(Node* temp, int k) = 0;
 	virtual void display() = 0;
 };

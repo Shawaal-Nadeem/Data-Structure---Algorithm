@@ -84,8 +84,25 @@ public:
 		}
 	}
 
+	Node* Tree::delete_Leaf_Node(Node*temp,int k)
+	{
+		if (temp == nullptr)
+		{
+			return nullptr;
+		}
+		if (temp->left == nullptr && temp->right == nullptr && temp->data == k)
+		{
+			delete temp;
+			return nullptr;
+		}
+		temp->left = delete_Leaf_Node(temp->left, k);
+		temp->right = delete_Leaf_Node(temp->right, k);
+		return temp;
+	}
+
 	void Tree::display()
 	{
+		delete_Leaf_Node(root, 42);         //only leaf nodes deleted.
 		cout << "Inorder : ";
 		InOrder(root);
 		cout << endl;
