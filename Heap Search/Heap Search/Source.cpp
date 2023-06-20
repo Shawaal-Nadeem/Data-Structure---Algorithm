@@ -8,7 +8,7 @@ int main()
 	obj.insert(3);
 	obj.insert(8);
 	obj.insert(1);
-	obj.minHeap();
 	obj.display();
+	obj.minHeap();
 	return 0;
 }

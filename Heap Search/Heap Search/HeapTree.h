@@ -29,74 +29,50 @@ public:
 		heapArr[heap_size - 1] = value;
 	}
 
-	int parent(int value)
+	int parent(int index)
 	{
-		int index;
-		for (int i = 0; i < limit; i++)
-		{
-			if (heapArr[i] == value)
-			{
-				index = i;
-				break;
-			}
-		}
 		int parentIndex = (index - 1) / 2;
-		int parentValue = heapArr[parentIndex];
-		return parentValue;
+		return parentIndex;
 	}
-	int leftChild(int value)
+
+	int leftChild(int index)
 	{
-		int index;
-		for (int i = 0; i < limit; i++)
-		{
-			if (heapArr[i] == value)
-			{
-				index = i;
-				break;
-			}
-		}
-		int childIndex = (2*index)+1;
-		int childValue = heapArr[childIndex];
-		return childValue;
+		int leftChildIndex = (2*index)+1;
+		return leftChildIndex;
 	}
-	int rightChild(int value)
+
+	int rightChild(int index)
 	{
-		int index;
-		for (int i = 0; i < limit; i++)
-		{
-			if (heapArr[i] == value)
-			{
-				index = i;
-				break;
-			}
-		}
-		int childIndex = (2 * index) + 2;
-		int childValue = heapArr[childIndex];
-		return childValue;
+		int rightChildIndex = (2 * index) + 2;
+		return rightChildIndex;
 	}
+
 	void minHeap()
 	{
 		int index = limit-1;
-		int parentIndex = 0;
-		while (index > 0)
+		while (index > 0 && heapArr[parent(index)]>heapArr[index])
 		{
-			if (heapArr[index] < parent(heapArr[index]))
-			{
-				int temp = heapArr[index];
-				for (int i = 0; i < limit; i++)
-				{
-					if (heapArr[i] == parent(heapArr[index]))
-					{
-						parentIndex = i;
-						break;
-					}
-				}
-				heapArr[parentIndex] = temp;
-				heapArr[index] = parent(heapArr[index]);
-				index = parentIndex;
-			}
+			int parentVal = heapArr[parent(index)];
+			int childVal = heapArr[index];
+			swap(parentVal, childVal);
+			heapArr[parent(index)] = parentVal;
+			heapArr[index] = childVal;
+			index = parent(index);
 		}
+		cout << "Min Heap: " << endl;
+		for (int i = 0; i < limit; i++)
+		{
+			cout << heapArr[i] << " ";
+		}
+		cout << endl;
 	}
+	void swap(int &parentVal, int &childVal)
+	{
+		int temp = parentVal;
+		parentVal = childVal;
+		childVal = temp;
+	}
+	
 	void display()
 	{
 		for (int i = 0; i < limit; i++)
