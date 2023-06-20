@@ -50,14 +50,21 @@ public:
 	void minHeap()
 	{
 		int index = limit-1;
-		while (index > 0 && heapArr[parent(index)]>heapArr[index])
+		while (index > 0)
 		{
-			int parentVal = heapArr[parent(index)];
-			int childVal = heapArr[index];
-			swap(parentVal, childVal);
-			heapArr[parent(index)] = parentVal;
-			heapArr[index] = childVal;
-			index = parent(index);
+			if (heapArr[parent(index)] > heapArr[index])
+			{
+				int parentVal = heapArr[parent(index)];
+				int childVal = heapArr[index];
+				swap(parentVal, childVal);
+				heapArr[parent(index)] = parentVal;
+				heapArr[index] = childVal;
+				index = parent(index);
+			}
+			else
+			{
+				index = parent(index);
+			}
 		}
 		cout << "Min Heap: " << endl;
 		for (int i = 0; i < limit; i++)
@@ -66,6 +73,34 @@ public:
 		}
 		cout << endl;
 	}
+
+	void maxHeap()
+	{
+		int index = limit - 1;
+		while (index > 0)
+		{
+			if (heapArr[parent(index)] < heapArr[index])
+			{
+				int parentVal = heapArr[parent(index)];
+				int childVal = heapArr[index];
+				swap(parentVal, childVal);
+				heapArr[parent(index)] = parentVal;
+				heapArr[index] = childVal;
+				index = parent(index);
+			}
+			else
+			{
+				index = parent(index);
+			}
+		}
+		cout << "Max Heap: " << endl;
+		for (int i = 0; i < limit; i++)
+		{
+			cout << heapArr[i] << " ";
+		}
+		cout << endl;
+	}
+
 	void swap(int &parentVal, int &childVal)
 	{
 		int temp = parentVal;

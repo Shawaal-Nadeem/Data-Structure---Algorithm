@@ -9,6 +9,7 @@ int main()
 	obj.insert(8);
 	obj.insert(1);
 	obj.display();
-	obj.minHeap();
+	//obj.minHeap();
+	obj.maxHeap();
 	return 0;
 }
