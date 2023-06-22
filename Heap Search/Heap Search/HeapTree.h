@@ -50,8 +50,11 @@ public:
 	void minHeap()
 	{
 		int index = limit-1;
+	
 		while (index > 0)
 		{
+			if (heapArr[index] < heapArr[index - 1])
+			{
 			if (heapArr[parent(index)] > heapArr[index])
 			{
 				int parentVal = heapArr[parent(index)];
@@ -61,11 +64,21 @@ public:
 				heapArr[index] = childVal;
 				index = parent(index);
 			}
+			}
 			else
 			{
-				index = parent(index);
+				if (heapArr[parent(index-1)] > heapArr[index-1])
+				{
+					int parentVal = heapArr[parent(index-1)];
+					int childVal = heapArr[index-1];
+					swap(parentVal, childVal);
+					heapArr[parent(index-1)] = parentVal;
+					heapArr[index-1] = childVal;
+					index = index - 2;
+				}
 			}
 		}
+		
 		cout << "Min Heap: " << endl;
 		for (int i = 0; i < limit; i++)
 		{
