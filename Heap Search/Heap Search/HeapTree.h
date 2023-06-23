@@ -49,51 +49,89 @@ public:
 
 	void minHeap()
 	{
-		int index = limit-1;
-		while (index > 0)
+		int lastLeaf_index = limit - 1;
+		int parent_index = parent(lastLeaf_index);
+		int non_leaf_nodes_size = 0;
+		for (int s = 0; s < limit / 2; s++)
 		{
-			if (heapArr[parent(index)] > heapArr[index])
-			{
-				int parentVal = heapArr[parent(index)];
-				int childVal = heapArr[index];
-				swap(parentVal, childVal);
-				heapArr[parent(index)] = parentVal;
-				heapArr[index] = childVal;
-				index = parent(index);
-			}
-			else
-			{
-				index = parent(index);
-			}
+			non_leaf_nodes_size++;
 		}
-		/*while (index > 0)
+		for (int stoper = 0;; stoper++)
 		{
-			if (heapArr[index] < heapArr[index - 1])
+			for (int i = parent_index; i >= 0; i--)
 			{
-				if (heapArr[parent(index)] > heapArr[index])
+				int left = leftChild(i);
+				int right = rightChild(i);
+				if (heapArr[left] < heapArr[right])
 				{
-					int parentVal = heapArr[parent(index)];
-					int childVal = heapArr[index];
-					swap(parentVal, childVal);
-					heapArr[parent(index)] = parentVal;
-					heapArr[index] = childVal;
-					index = parent(index);
+					if (heapArr[left] < heapArr[i])
+					{
+						int parentVal = heapArr[i];
+						int childVal = heapArr[left];
+						swap(parentVal, childVal);
+						heapArr[i] = parentVal;
+						heapArr[left] = childVal;
+					}
+				}
+				else if (heapArr[right] < heapArr[left])
+				{
+					if (heapArr[right] < heapArr[i])
+					{
+						int parentVal = heapArr[i];
+						int childVal = heapArr[right];
+						swap(parentVal, childVal);
+						heapArr[i] = parentVal;
+						heapArr[right] = childVal;
+					}
 				}
 			}
-			else
+			int stop = 0;
+			int*arr = new int[non_leaf_nodes_size];
+			int count = 0;
+			for (int j = parent_index; j >= 0; j--)
 			{
-				if (heapArr[parent(index - 1)] > heapArr[index - 1])
+				int left = leftChild(j);
+				int right = rightChild(j);
+				if (heapArr[left] < heapArr[right])
 				{
-					int parentVal = heapArr[parent(index - 1)];
-					int childVal = heapArr[index - 1];
-					swap(parentVal, childVal);
-					heapArr[parent(index - 1)] = parentVal;
-					heapArr[index - 1] = childVal;
-					index = index - 2;
+					if (heapArr[left] < heapArr[j])
+					{
+						arr[count] = 0;
+					}
+					else
+					{
+						arr[count] = 1;
+					}
+					count++;
+				}
+				else if (heapArr[right] < heapArr[left])
+				{
+					if (heapArr[right] < heapArr[j])
+					{
+						arr[count] = 0;
+					}
+					else
+					{
+						arr[count] = 1;
+					}
+					count++;
 				}
 			}
-		}*/
-		cout << "Min Heap: " << endl;
+
+			for (int k = 0; k < non_leaf_nodes_size; k++)
+			{
+				if (arr[k] == 1)
+				{
+					stop++;
+				}
+			}
+			if (stop == non_leaf_nodes_size)
+			{
+				break;
+			}
+
+		}
+		cout << "Min Heap : ";
 		for (int i = 0; i < limit; i++)
 		{
 			cout << heapArr[i] << " ";
@@ -106,15 +144,12 @@ public:
 		int lastLeaf_index = limit - 1;
 		int parent_index = parent(lastLeaf_index);
 		int non_leaf_nodes_size = 0;
-		int stop = 0;
 		for (int s = 0; s < limit / 2; s++)
 		{
 			non_leaf_nodes_size++;
 		}
-		cout << non_leaf_nodes_size << endl;
 		for (int stoper = 0;; stoper++)
 		{
-			cout << "1st" << endl;
 			for (int i = parent_index; i >= 0; i--)
 			{
 				int left = leftChild(i);
@@ -142,7 +177,7 @@ public:
 					}
 				}
 			}
-			cout << "2nd" << endl;
+			int stop = 0;
 			int*arr = new int[non_leaf_nodes_size];
 			int count = 0;
 			for (int j = parent_index; j >= 0; j--)
@@ -177,7 +212,7 @@ public:
 			
 			for (int k = 0; k < non_leaf_nodes_size; k++)
 			{
-				if (arr[k] == 0)
+				if (arr[k] == 1)
 				{
 					stop++;
 				}
@@ -186,8 +221,9 @@ public:
 			{
 				break;
 			}
+		
 		}
-		cout << "Max Heap: " << endl;
+		cout << "Max Heap : ";
 		for (int i = 0; i < limit; i++)
 		{
 			cout << heapArr[i] << " ";
