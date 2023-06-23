@@ -236,6 +236,14 @@ public:
 		}
 		cout << endl;
 	}
+	void delete_from_maxHeap()
+	{
+		int lastChildIndex = limit - 1;
+		heapArr[0] = heapArr[lastChildIndex];
+		limit--;
+		maxHeap();
+	}
+
 	void leafNodes()
 	{
 		cout << "Leaf Nodes : ";
