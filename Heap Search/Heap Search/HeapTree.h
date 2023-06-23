@@ -138,7 +138,13 @@ public:
 		}
 		cout << endl;
 	}
-
+	void delete_from_minHeap()
+	{
+		int lastChildIndex = limit - 1;
+		heapArr[0] = heapArr[lastChildIndex];
+		limit--;
+		minHeap();
+	}
 	void maxHeap()
 	{
 		int lastLeaf_index = limit - 1;

@@ -18,5 +18,6 @@ int main()
 	obj.leafNodes();
 	obj.maxHeap();
 	obj.minHeap();
+	obj.delete_from_minHeap();
 	return 0;
 }
