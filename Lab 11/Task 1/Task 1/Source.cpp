@@ -2,14 +2,21 @@
 
 int main()
 {
-	HeapTree obj(5);
-	obj.insert(4);
-	obj.insert(6);
+	HeapTree obj(11);
+	obj.insert(3);
+	obj.insert(5);
+	obj.insert(8);
 	obj.insert(10);
-	obj.insert(9);
-	obj.insert(2);
+	obj.insert(17);
+	obj.insert(11);
+	obj.insert(13);
+	obj.insert(19);
+	obj.insert(22);
+	obj.insert(24);
+	obj.insert(29);
 	obj.display();
-	obj.min_Heap();
-	/*obj.max_Heap();*/
+	obj.leafNodes();
+	//obj.min_Heap();
+	obj.max_Heap();
 	return 0;
 }
