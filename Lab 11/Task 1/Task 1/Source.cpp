@@ -16,7 +16,7 @@ int main()
 	obj.insert(29);
 	obj.display();
 	obj.leafNodes();
-	//obj.min_Heap();
-	obj.max_Heap();
+	obj.minHeap();
+	/*obj.maxHeap();*/
 	return 0;
 }
