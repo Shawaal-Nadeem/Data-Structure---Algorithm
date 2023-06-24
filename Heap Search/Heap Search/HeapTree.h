@@ -140,6 +140,7 @@ public:
 	}
 	void delete_from_minHeap()
 	{
+		cout << "After Deletion ";
 		int lastChildIndex = limit - 1;
 		heapArr[0] = heapArr[lastChildIndex];
 		limit--;
@@ -238,6 +239,7 @@ public:
 	}
 	void delete_from_maxHeap()
 	{
+		cout << "After Deletion ";
 		int lastChildIndex = limit - 1;
 		heapArr[0] = heapArr[lastChildIndex];
 		limit--;
