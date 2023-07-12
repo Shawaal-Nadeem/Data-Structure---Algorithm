@@ -63,6 +63,27 @@ public:
 
 	}
 
+	void countTriplets(int val)
+	{
+		cout << "Triplets of "<<val <<" are"<< endl;
+		int count = 0;
+		for (Node*temp_i = head; temp_i != nullptr; temp_i = temp_i->next)
+		{
+			for (Node*temp_j = temp_i->next; temp_j != nullptr; temp_j = temp_j->next)
+			{
+				for (Node*temp_k = temp_j->next; temp_k != nullptr; temp_k = temp_k->next)
+				{
+					if (temp_i->data + temp_j->data + temp_k->data == val)
+					{
+						cout << "{" << temp_i->data << "," << temp_j->data << "," << temp_k->data << "}" << endl;
+						count++;
+					}
+				}
+			}
+		}
+		cout << "Number of Triplets are : " << count << endl;
+	}
+
 	void display()
 	{
 		Node*temp = head;
