@@ -49,28 +49,15 @@ public:
 		}
 	}
 
-	int sum_of_EvenNumbers(Node*temp)
+	void display_EvenNumbers()
 	{
-		if (head->next == nullptr && tail->next == nullptr)
+		cout << "Even Numbers are : ";
+		Node*temp = head;
+		while (temp!=nullptr)
 		{
 			if (temp->data % 2 == 0)
 			{
-			return head->data;
-			}
-		}
-
-		else
-		{
-			if (temp->data % 2 == 0)
-			{
-				int x = 0;
-			if (temp == tail)
-			{
-				return x = x + temp->data;
-			}
-			x = temp->data;
-			temp = temp->next;
-			x = x + sum_of_List(temp);
+				cout << temp->data<<" ";
 			}
 			temp = temp->next;
 		}
@@ -86,7 +73,7 @@ public:
 		}
 		cout << endl;
 		cout << sum_of_List(head) << endl;
-		cout << sum_of_EvenNumbers(head) << endl;
+		display_EvenNumbers();
 		cout << endl;
 	}
 };
