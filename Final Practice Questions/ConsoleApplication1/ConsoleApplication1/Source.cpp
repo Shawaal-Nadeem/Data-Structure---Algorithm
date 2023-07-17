@@ -13,6 +13,7 @@ void insertReservation(unordered_map<string, int>&umap)
 	cout << "Enter Reservation ID : ";
 	cin >> id;
 	cout << endl;
+	umap[name] = id;
 	cout << "Reservation Added of " << name << " having ID " << id << endl;
 	cout << endl;
 	cout << endl;
@@ -21,14 +22,13 @@ void insertReservation(unordered_map<string, int>&umap)
 void deleteReservation(unordered_map<string, int>&umap)
 {
 	string name;
-	cout << "Enter Guest Name which u wanna Remove : ";
+	cout << "Enter Guest Name to Remove: ";
 	cin >> name;
-	for (auto x = umap.begin(); x != umap.end();++x)
-	{
-		if (x->first == name)
-		{
-			umap.erase(x);
-		}
+	auto x = umap.find(name);
+	if (x != umap.end()) {
+		int id = x->second;
+		umap.erase(x);
+		cout << "Reservation ID " << id << " deleted for guest " << name << endl;
 	}
 }
 
